@@ -1,0 +1,189 @@
+{
+  "categories": [
+    {
+      "name": "Mais Vendidas",
+      "products": [
+        {
+          "id": 1,
+          "name": "Pitangueira",
+          "price": 79.90,
+          "url": "/images/pitangueira.png",
+          "image": "imageProduct/pitangueira.png",
+          "description": "Árvore frutífera brasileira que produz pequenas frutas vermelhas aromáticas e saborosas. Pode ser cultivada em vasos ou no jardim, sendo resistente e fácil de cuidar."
+        },
+        {
+          "id": 2,
+          "name": "Quaresmeira",
+          "price": 69.90,
+          "url": "/images/quaresmeira.png",
+          "image": "imageProduct/quaresmeira.png",
+          "description": "Árvore ornamental famosa por suas flores roxas intensas que aparecem principalmente no outono. Muito usada para decorar jardins e calçadas."
+        },
+        {
+          "id": 3,
+          "name": "Bromélia Gusmânia",
+          "price": 119.90,
+          "url": "/images/bromelia-gusmania.png",
+          "image": "/imageProduct/bromelia-gusmania.png",
+          "description": "Planta tropical ornamental muito popular em ambientes internos. Possui flores coloridas e duradouras que dão destaque à decoração."
+        },
+        {
+          "id": 4,
+          "name": "Ingá-feijão",
+          "price": 89.90,
+          "url": "/images/inga-feijao.png",
+          "image": "/imageProduct/inga-feijao.png",
+          "description": "Árvore frutífera nativa da América do Sul, conhecida por seus frutos alongados e doces. Também é valorizada pela sombra e pela beleza das flores."
+        }
+      ]
+    },
+    {
+      "name": "Plantas Para Iniciantes",
+      "products": [
+        {
+          "id": 5,
+          "name": "Pitangueira",
+          "price": 79.90,
+          "url": "/images/pitangueira.png",
+          "image": "imageProduct/pitangueira.png",
+          "description": "Árvore frutífera brasileira que produz pequenas frutas vermelhas aromáticas e saborosas. Pode ser cultivada em vasos ou no jardim, sendo resistente e fácil de cuidar."
+        },
+        {
+          "id": 6,
+          "name": "Guaimbê",
+          "price": 69.90,
+          "url": "/images/guaimbe.png",
+          "image": "imageProduct/guaimbe.png",
+          "description": "Planta ornamental tropical com folhas grandes e recortadas. Muito resistente e perfeita para quem está começando na jardinagem."
+        },
+        {
+          "id": 7,
+          "name": "Clúsia",
+          "price": 59.90,
+          "url": "/images/clusia.png",
+          "image": "imageProduct/clusia.png",
+          "description": "Arbusto ornamental de folhas grossas e brilhantes. Bastante resistente ao sol e muito utilizado em paisagismo."
+        },
+        {
+          "id": 8,
+          "name": "Peperômia",
+          "price": 39.90,
+          "url": "/images/peperomia.png",
+          "image": "imageProduct/peperomia.png",
+          "description": "Planta compacta e decorativa, ideal para mesas, estantes e ambientes internos. Fácil de cuidar e exige pouca manutenção."
+        }
+      ]
+    },
+    {
+      "name": "Plantas Para Ambientes Internos",
+      "products": [
+        {
+          "id": 9,
+          "name": "Maranta Zebrina",
+          "price": 59.90,
+          "url": "/images/maranta-zebrinha.png",
+          "image": "imageProduct/maranta-zebrinha.png",
+          "description": "Planta ornamental com folhas verdes e desenhos marcantes. Muito usada em decoração de interiores."
+        },
+        {
+          "id": 10,
+          "name": "Palmeira-Juçara",
+          "price": 89.90,
+          "url": "/images/palmeira-jucara.png",
+          "image": "imageProduct/palmeira-jucara.png",
+          "description": "Palmeira elegante com folhas delicadas, perfeita para trazer um toque tropical aos ambientes internos."
+        },
+        {
+          "id": 11,
+          "name": "Samambaia-Asplênio",
+          "price": 69.90,
+          "url": "/images/samambaia-asplenio.png",
+          "image": "imageProduct/samambaia-asplenio.png",
+          "description": "Samambaia moderna com folhas largas e brilhantes. Ideal para decoração de salas e escritórios."
+        },
+        {
+          "id": 12,
+          "name": "Bromélia-Gusmânia",
+          "price": 119.90,
+          "url": "/images/bromelia-gusmania.png",
+          "image": "/imageProduct/bromelia-gusmania.png",
+          "description": "Planta tropical ornamental com flores vibrantes que permanecem bonitas por longos períodos."
+        }
+      ]
+    },
+    {
+      "name": "Plantas Para Jardim",
+      "products": [
+        {
+          "id": 13,
+          "name": "Ipê Amarelo",
+          "price": 99.90,
+          "url": "/images/ipe-amarelo.png",
+          "image": "/imageProduct/ipe-amarelo.png",
+          "description": "Árvore ornamental brasileira muito famosa por suas flores amarelas intensas que aparecem no inverno."
+        },
+        {
+          "id": 14,
+          "name": "Manacá da Serra",
+          "price": 79.90,
+          "url": "/images/manaca-da-serra.png",
+          "image": "imageProduct/manacadaSerra.png",
+          "description": "Árvore ornamental conhecida por flores que mudam de cor ao longo do tempo, passando do branco ao roxo."
+        },
+        {
+          "id": 15,
+          "name": "Jabuticabeira",
+          "price": 129.90,
+          "url": "/images/jabuticabeira.png",
+          "image": "imageProduct/jabuticabeira.png",
+          "description": "Árvore frutífera brasileira que produz frutos diretamente no tronco. Muito apreciada em quintais e jardins."
+        },
+        {
+          "id": 16,
+          "name": "Quaresmeira",
+          "price": 69.90,
+          "url": "/images/quaresmeira.png",
+          "image": "imageProduct/quaresmeira.png",
+          "description": "Árvore ornamental com flores roxas exuberantes, muito utilizada em projetos paisagísticos."
+        }
+      ]
+    },
+    {
+      "name": "Plantas Para Jardim de Chuva",
+      "products": [
+        {
+          "id": 17,
+          "name": "Íris da Praia",
+          "price": 39.90,
+          "url": "/images/iris-da-praia.png",
+          "image": "imageProduct/iris-da-praia.png",
+          "description": "Planta resistente que cresce bem em locais úmidos e ensolarados. Produz flores delicadas e ornamentais."
+        },
+        {
+          "id": 18,
+          "name": "Guaivira",
+          "price": 69.90,
+          "url": "/images/guaivira.png",
+          "image": "imageProduct/guaivira.png",
+          "description": "Arbusto nativo com folhas verdes e flores pequenas, muito utilizado em reflorestamento e paisagismo."
+        },
+        {
+          "id": 19,
+          "name": "Ingá-feijão",
+          "price": 89.90,
+          "url": "/images/inga-feijao.png",
+          "image": "imageProduct/inga-feijao.png",
+          "description": "Árvore que se adapta bem a solos úmidos, sendo ideal para projetos de recuperação ambiental."
+        },
+        {
+          "id": 20,
+          "name": "Taboa",
+          "price": 34.90,
+          "url": "/images/taboa.png",
+          "image": "imageProduct/taboa.png",
+          "description": "Planta aquática muito usada em jardins de chuva e áreas alagadas. Ajuda na filtragem natural da água."
+        }
+      ]
+    }
+  ]
+}

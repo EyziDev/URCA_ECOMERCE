@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/product.css" type="text/css"/>
+</head>
+
+<body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <header><a href="/index.html"><button id="voltar"><img src="images/folha.png"/><h1>Voltar</h1></button></a></header>
+    <main>
+        <div id="imageProduct">
+            <img src=""/>
+        </div>
+        <section id="infoItens">
+            <article id="productName">
+                <h1></h1>
+                <p></p>
+            </article>
+            <article id="infoTamanhos">
+                <section id="recipientes">
+                    <h1>Recipiente</h1>
+                    <div id="tamanhoRecipiente">
+                        <button id="grande"><img src="images/recipienteGrande.png"><h5>Grande</h5></button>
+                        <button id="medio"><img src="images/recipienteMedio.png"><h5>Médio</h5></button>
+                        <button id="pequeno"><img src="images/recipientePequeno.png"><h5>Pequeno</h5></button>
+                    </div>
+                </section>
+                <div id="cor">
+                    <h1>Cor do Vaso</h1>
+                    <div id="botoesCima">
+                        <button id="branco"><div class="circuloOpcao"></div><h3 class="colorName">Branco</h3></button>
+                        <button id="camurca"><div class="circuloOpcao"></div><h3 class="colorName">Camurça</h3></button>
+                        <button id="preto"><div class="circuloOpcao"></div><h3 class="colorName">Preto</h3></button>
+                    </div>
+                    <div id="botoesBaixo">
+                        <button id="creme"><div class="circuloOpcao"></div><h3 class="colorName">Creme</h3></button>
+                        <button id="vinho"><div class="circuloOpcao"></div><h3 class="colorName">Vinho</h3></button>
+                        <button id="laranja"><div class="circuloOpcao"></div><h3 class="colorName">Laranja</h3></button>
+                    </div>
+                </div>
+            </article>
+            <div id="tamanho">
+                    <h1>Tamanho da Planta</h1>
+                    <div id="positionTamanho">
+                        <button id="plantaGrande"><h3>Grande</h3></button>
+                        <button id="plantaMedio"><h3>Médio</h3></button>
+                        <button id="plantaPequeno"><h3>Pequena</h3></button>
+                    </div>
+            </div>
+            <div id="productPreco">
+                <h1></h1>
+                <br/><br/>
+                <P>Enviamos para todo o Brasil</P>
+            </div>
+            <a id="comprar" href="https://www.instagram.com/cunaflorest/" target="_blank"><button>Comprar</button></a>
+        </section>
+    </main>
+    <script src="/JavaScript/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+*{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../images/body1.jpg);
+    background-repeat: no-repeat;
+}
+header a{
+    text-decoration: none;
+}
+#voltar{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+#voltar img{
+    width: 4%;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#voltar h1{
+    display: flex;
+    margin-top: 30px;
+}
+
+main{
+    position: relative;
+    width: 70%;
+    height: 774px;
+    margin: auto;
+    display: flex;
+}
+
+#imageProduct{
+    position: relative;
+    width: 619px;
+    height: 774px;
+    border-radius: 5px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    
+}
+#imageProduct img{
+    width: 100%;
+    height: 774px;
+    border-radius: 5px;
+    display: flex;
+}
+
+#productName{
+    position: relative;
+    width: 600px;
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+#infoTamanhos{
+    position: relative;
+    display: flex;
+    margin-left: 40px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+#cor{
+    margin-left: 10px;
+    width: 300px;
+    height: 200px;
+}
+
+#cor button{
+    margin-top: 10px;
+    width: 200px;
+    height: 60px;
+    background: none;
+    flex-direction: column;   /* coloca um embaixo do outro */
+    align-items: center;      /* centraliza horizontalmente */
+    display: flex;
+    justify-content: center;
+}
+#cor button h3{
+    font-size: 17px;
+}
+.circuloOpcao{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: black solid 1px;
+    margin: 0;
+}
+.circuloOpcao:hover{
+    width: 40px;
+    height: 40px;
+    margin: 0;
+}
+.colorName{
+    display: block;
+    font-size: 13px;
+    text-align: center;
+}
+#botoesCima{
+    display: flex;
+}
+#botoesBaixo{
+    display: flex;
+}
+
+#cor p{
+    font-size: 13px;
+}
+#branco .circuloOpcao{
+    background-color: white;
+}
+#camurca .circuloOpcao{
+    background-color: #C19A6B;
+}
+#preto .circuloOpcao{
+    background-color: black;
+    }
+#creme .circuloOpcao{
+    background-color: #FFFDD0;
+}
+
+#vinho .circuloOpcao{
+    background-color: #A0524A;
+}
+#laranja .circuloOpcao{
+    background-color: #FF8B00;
+}
+
+#recipientes{
+    position: relative;
+    width: 300px;
+}
+#recipientes button{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#recipientes button:hover{
+    box-sizing: border-box;
+    border: black solid 2px;
+    border-radius: 8px;
+}
+#tamanhoRecipiente{
+    display: flex;
+    gap: 10px;
+    align-items: flex-end; /*alinha os itens no final do containe*/
+}
+#grande{
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#medio{
+    display: flex;
+    margin-top: 15px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#pequeno{
+    display: flex;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tamanho{
+    position: relative;
+    margin-left: 40px;
+    font-size: 20px;
+}
+#tamanho button{
+    width: 200px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: white;
+    gap: 8px;
+    border: black solid 1px;
+    font-size: 20px;
+}
+#tamanho button:hover{
+    width: 205px;
+    height: 55px;
+    box-sizing: border-box;
+    border: 3px solid black;
+}
+#positionTamanho{
+    width: 400px;
+    height: 20px;
+    display: flex;
+    margin-top: 10px;
+}
+#plantaMedio{
+    margin-left: 20px;
+}
+#plantaPequeno{
+    margin-left: 20px;
+}
+#positionTamanho button{
+    background: none;
+}
+
+#productPreco{
+    position: relative;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+#productPreco h1{
+    font-size: 40px;
+}
+
+#productPreco p{
+    font-size: 20px;
+}
+
+#comprar button{
+    width: 416px;
+    height: 83px;
+    background-color: #41705A;
+    border-radius: 10px;
+    color: white;
+    margin-left: 40px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+/*Versão Mobile*/
+@media (max-width: 480px) {
+    body{
+        width: 100%;
+        background-image: none;
+    }
+
+    main{
+        flex-direction: column;
+        width: 100%;
+        padding: 20px;
+    }
+
+    #voltar{
+        display: none;
+    }
+
+    #imageProduct{
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        margin-bottom: 20px;
+    }
+
+    #imageProduct img{
+        width: 100%;
+        height: auto;
+    }
+
+    #productName{
+        margin-left: 0;
+        font-size: 18px;
+        margin-bottom: 10px;
+        width: 400px;
+    }
+
+    #infoTamanhos{
+        flex-direction: column;
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    #recipientes{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #tamanhoRecipiente{
+        display: flex;
+        gap: 10px;
+        align-items: flex-end; /*alinha os itens no final do containe*/
+    }
+
+    #recipientes button{
+        width: 110px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: white;
+        border: black solid 1px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+    #recipientes button:hover{
+        width: 112px;
+        height: 30px;
+        border: black solid 3px;
+    }
+    #recipientes img{
+        width: 24px;
+        height: 24px;
+    }
+    #recipientes h5{
+        margin: 0;
+    }
+
+    #cor{
+        margin-left: 0;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #botoesCima,
+    #botoesBaixo{
+        gap: 15px;
+    }
+
+    #cor button{
+        width: 110px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+    #cor button:hover{
+        width: 112px;
+        height: 30px;
+        border: black solid 3px;
+    }
+    #cor h3{
+        display: block;
+    }
+    .circuloOpcao{
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        border: black solid 1px;
+        display: flex;
+        margin: 0;
+    }
+    .circuloOpcao:hover{
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+    #branco .circuloOpcao{
+    background-color: white;
+    }
+    #camurca .circuloOpcao{
+        background-color: #C19A6B;
+    }
+    #preto .circuloOpcao{
+        background-color: black;
+    }
+    #creme .circuloOpcao{
+        background-color: #FFFDD0;
+    }
+
+    #vinho .circuloOpcao{
+        background-color: #A0524A;
+    }
+    #laranja .circuloOpcao{
+        background-color: #FF8B00;
+    }
+    .colorName{
+        display: flex;
+    }
+
+    #tamanho{
+        margin-left: 0;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    #tamanho button{
+        width: 110px;
+        height: 28px;
+        border-radius: 8px;
+        background-color: white;
+        gap: 8px;
+        border: black solid 1px;
+    }
+    #tamanho button:hover{
+        width: 112px;
+        height: 30px;
+        border: black solid 3px;
+    }
+
+    #positionTamanho{
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    #positionTamanho button{
+        padding: 5px 10px;
+    }
+
+    #productPreco{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #productPreco h1{
+        font-size: 32px;
+        text-align: center;
+    }
+
+    #productPreco p, br{
+        display: none;
+    }
+
+    #comprar{
+        display: block;
+        width: 100%;
+    }
+
+    #comprar button{
+        width: 100%;
+        height: 60px;
+        margin-left: 0;
+        font-size: 20px;
+    }
+}
+
+/* Versão Tablet */
+@media (min-width: 481px) and (max-width: 1024px){
+
+    body{
+        width: 100%;
+        background-image: none;
+    }
+
+    main{
+        flex-direction: column;
+        width: 100%;
+        padding: 30px;
+    }
+
+    #voltar{
+        position: relative;
+        width: 100%;
+        height: 40px;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+    #voltar img{
+        width: 10%;
+        height: 50px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #voltar h1{
+        display: flex;
+        margin-top: 30px;
+    }
+
+    #imageProduct{
+        width: 90%;
+        height: auto;
+        margin-bottom: 25px;
+        margin: auto;
+    }
+
+    #productName{
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    #infoTamanhos{
+        width: 90%;     
+        height: 280px;
+        margin-bottom: 15px;
+        flex-direction: column;
+        font-size: 16px;
+    }
+
+    #recipientes{
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    #recipientes button{
+        width: 140px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: white;
+        border: black solid 1px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+    #recipientes button:hover{
+        width: 150px;
+        height: 50px;
+        border: black solid 4px;
+    }
+
+    #recipientes img{
+        width: 28px;
+        height: 28px;
+    }
+    #tamanhoRecipiente{
+        display: flex;
+        gap: 10px;
+        align-items: flex-end; /*alinha os itens no final do containe*/
+    }
+    #cor{
+        width: 100%;
+        margin-bottom: 25px;
+        margin-left: 0;
+    }
+
+    #cor button{
+        width: 140px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 8px;
+    }
+    #cor button:hover{
+        width: 150px;
+        height: 50px;
+        border: black solid 4px;
+    }
+
+    #cor h3{
+        display: block;
+    }
+    .circuloOpcao{
+        width: 20px;
+        height: 20px;
+        border-radius: 100px;
+        border: black solid 1px;
+        margin-left: 5px;
+        display: flex;
+    }
+    #branco .circuloOpcao{
+    background-color: white;
+    }
+    #camurca .circuloOpcao{
+        background-color: #C19A6B;
+    }
+    #preto .circuloOpcao{
+        background-color: black;
+    }
+    #creme .circuloOpcao{
+        background-color: #FFFDD0;
+    }
+
+    #vinho .circuloOpcao{
+        background-color: #A0524A;
+    }
+    #laranja .circuloOpcao{
+        background-color: #FF8B00;
+    }
+    .colorName{
+        display: flex;
+    }
+
+    #tamanho button{
+        width: 140px;
+        height: 40px;
+        border-radius: 8px;
+        background-color: white;
+        border: black solid 1px;
+    }
+    #tamanho button:hover{
+        width: 150px;
+        height: 50px;
+        border: black solid 4px;
+    }
+
+    #productPreco{
+        text-align: center;
+        font-size: 36px;
+    }
+    #productPreco br{
+        display: none;
+    }
+
+    #comprar button{
+        width: 90%;
+        height: 65px;
+        font-size: 22px;
+    }
+}
