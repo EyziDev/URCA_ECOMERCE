@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia de cuidados</title>
+    <link rel="stylesheet" href="CSS/guia.css" type="text/css" />
+  </head>
+  <body>
+
+         <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script>
+  (function(d){
+    var s = d.createElement("script");
+    s.setAttribute("data-account", "SEU_ID_AQUI");
+    s.setAttribute("src", "https://cdn.userway.org/widget.js");
+    (d.body || d.head).appendChild(s);
+  })(document);
+  </script>
+
+    <header class="cabecalho">
+      <nav class="menu">
+        <img src="images/logoGuia.png" alt="Logo" />
+        <ul>
+          <li><a href="index.html"> Home </a></li>
+          <li><a href="cultoia2.html"> Consultoria </a></li>
+          <li><a href="catalogo.html"> Catálago </a></li>
+          <li><a href="guia.html"> Jardinagem </a></li>
+        </ul>
+      </nav>
+
+      <div class="texto_cabecalho">
+        <h2>Guia de Cuidados</h2>
+        <p>
+          Antes de plantar, dedique um tempo para conhecer a espécie que irá
+          cultivar. Cada planta possui necessidades únicas de luz, água e
+          nutrientes. Entender essas diferenças é o primeiro passo para garantir
+          um crescimento saudável e uma planta cheia de vida.
+        </p>
+      </div>
+    </header>
+
+    <!----------- Cuidados Essenciais ------------>
+
+    <section class="cuidados">
+      <h2>Cuidados Essenciais para Todas as Plantas</h2>
+      <p>
+        Independentemente do tipo ou espécie, toda planta precisa de atenção aos
+        elementos básicos da vida: luz, água e solo adequado. Enquanto algumas
+        flores e folhagens prosperam em sol pleno, outras se desenvolvem melhor
+        em meia-sombra ou sombra, mas todas compartilham a necessidade de
+        observação constante e cuidados equilibrados.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <img src="../images/ícone_de_luz.png" alt="Ícone de luz" />
+          <p>Luz adequada</p>
+        </div>
+
+        <div class="card">
+          <img src="../images/Ícone_água.png" alt="Ícone de água" />
+          <p>Rega equilibrada</p>
+        </div>
+
+        <div class="card">
+          <img src="../images/Ícone_solo.png" alt="Ícone de solo" />
+          <p>Solo nutritivo</p>
+        </div>
+      </div>
+    </section>
+
+    <!---------- Espécies ----------->
+
+    <section class="especies">
+      <h2>Conheça a espécie que está cultivando</h2>
+      <p id="sub_titulo">Entenda as necessidades de luz da sua planta</p>
+
+      <div class="plantas">
+
+        <a href="solpleno.html" class="planta" >
+          <img src="../images/Manacá_da_Serra.png" />
+          <h3>Sol pleno</h3>
+          <p>
+            Plantas que precisam receber luz solar direta durante boa parte do
+            dia.
+          </p>
+        </a>
+
+        <a href="meia_sombra.html" class="planta">
+          <img src="../images/meia_sombra.png" />
+          <h3>Meia sombra</h3>
+          <p>
+            Espécies que preferem luz indireta ou apenas algumas horas de sol.
+          </p>
+        </a>
+       
+
+        <a href="sombra.html" class="planta" >
+          <img src="../images/Sombra.png" />
+          <h3>Sombra</h3>
+          <p>
+            Plantas que se desenvolvem melhor em ambientes com poucaincidência
+            de luz direta.
+          </p>
+        </a>
+        
+      </div>
+    </section>
+
+    <!----------- Manusei e cuidados gerais ------------->
+
+    <section class="manuseio">
+      <h2>Manuseio e cuidados gerias</h2>
+      <p>Práticas essenciais para manter suas plantas saudáveis</p>
+
+      <div class="dicas">
+        <div class="dica">
+          <img src="../images/Solo_e_vaso.png" />
+          <h3>Solo e vaso</h3>
+          <p>
+            Utilize vasos com furos de drenagem e terra adequada para a espécie
+            (substrato), garantindo oxigenação das raízes.
+          </p>
+        </div>
+
+        <div class="dica">
+          <img src="../images/Adubação.png" />
+          <h3>Adubação</h3>
+          <p>
+            Reponha os nutrientes do solo periodicamente, especialmente em
+            épocas de crescimento como primavera e verão.
+          </p>
+        </div>
+
+        <div class="dica">
+          <img src="../images/Poda.png" />
+          <h3>Replantar</h3>
+          <p>
+            Remova folhas secas ou amareladas para evitar doenças e estimular o
+            crescimento saudável da planta.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!---------- Rodapé ---------->
+
+    <footer class="rodape">
+      <h1>Guia de Plantas</h1>
+      <p> Cultivando conhecimento para um mundo mais verde </p>
+    </footer>
+  </body>
+</html>

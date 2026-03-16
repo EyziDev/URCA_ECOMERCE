@@ -3,62 +3,220 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catálogo</title>
-    <link rel="stylesheet" href="/css/styles.css" type="text/css" />
+    <title>CUNA</title>
+
+    <link rel="stylesheet" href="css/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
     <link rel="icon" href="images/miniLogo.png" type="image/png">
   </head>
 
   <body>
-    <script src="JavaScript/script.js"></script>
+    <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
-    <header>
-      <nav class="nav-bar poppins-bold">
+  <script>
+  (function(d){
+    var s = d.createElement("script");
+    s.setAttribute("data-account", "SEU_ID_AQUI");
+    s.setAttribute("src", "https://cdn.userway.org/widget.js");
+    (d.body || d.head).appendChild(s);
+  })(document);
+  </script>
+
+
+    <!-- INÍCIO -->
+    <section id="inicio">
+      <header class="header">
         <div class="logo">
-          <img src="/images/logo.png" alt="" />
+          <img src="images/logoo.png" alt="Logo" />
         </div>
-        <ul>
-          <li><a href="/home.html">Home</a></li>
-          <li><a href="#">Cátalogo</a></li>
-          <li><a href="#">Consultoria</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="banner poppins-bold">
-        <div>
-          <h1>Bem-vindo ao Catálogo</h1>
+
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cultoia2.html">Consultoria</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="guia.html">Jardinagem</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-text">
+          <h1>
+            Espécies <span>nativas</span> fortalecem a biodiversidade e melhoram
+            o
+            <span>bem-estar</span>
+          </h1>
           <p>
-            <span>Encontre</span> as plantas <span>perfeitas</span> para o seu
-            <span>lar</span>!
+            Espécies da Mata Atlântica ajudam a refrescar o clima urbano,
+            aumentam a biodiversidade e tornam as cidades mais sustentáveis.
+          </p>
+          <button class="btn">Conheça nosso trabalho</button>
+        </div>
+      </section>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos">
+      <h2 class="titulo-servicos">
+        Issa é a Cuna <br />Transforme seu ambiente com mais natureza
+      </h2>
+      <p class="subtitulo-servicos">
+        Levamos o verde para mais perto das pessoas. Nossos serviços unem
+        educação, sustentabilidade e bem-estar para criar ambientes mais
+        saudáveis, bonitos e conectados com a natureza.
+      </p>
+
+      <div class="cards-servicos">
+        <div class="card-servico">
+          <img src="images/educação.jpeg" alt="Educação Ambiental" />
+          <h3>Educação Ambiental</h3>
+          <p>
+            Desenvolvemos projetos educativos que incentivam o cuidado com a
+            natureza e o cultivo de plantas. Nosso objetivo é conscientizar
+            pessoas e comunidades sobre a importância da preservação ambiental.
+          </p>
+        </div>
+
+        <div class="card-servico">
+          <img src="images/açãourbana.jpeg" alt="Ação Urbana" />
+          <h3>Ação Urbana</h3>
+          <p>
+            Criamos iniciativas que levam mais áreas verdes para ambientes
+            urbanos, mostrando que pequenas mudanças podem transformar cidades
+            em lugares mais sustentáveis e agradáveis.
+          </p>
+        </div>
+
+        <div class="card-servico">
+          <img src="images/bemestar.jpeg" alt="Bem-Estar Natural" />
+          <h3>Bem-Estar Natural</h3>
+          <p>
+            Ambientes com plantas trazem mais vida, conforto e qualidade de
+            vida. Ajudamos você a criar espaços naturais que promovem
+            tranquilidade e bem-estar no dia a dia.
           </p>
         </div>
       </div>
-    </header>
-
-    <section class="product-section">
-      <h1 class="poppins-bold">Nosso Catálogo</h1>
-      <div id="gallery" class="gallery"></div>
     </section>
 
-    <footer>
-      
-      <div id="contato">
-        <h3>Contato</h3>
-        <ul>
-          <li>Rua João Pessoa, 450</li>
-          <li>cuna_store@gmail.com</li>
-          <li>(11) 4002 8922</li>
-        </ul>
+    <!-- CONSULTORIA -->
+    <section class="consultoria">
+      <div class="consultoria-container">
+        <div class="consultoria-img" data-aos="fade-right">
+          <img src="images/consultoria.jpeg" alt="Consultoria ambiental" />
+        </div>
+
+        <div class="consultoria-texto" data-aos="fade-left">
+          <h2>Consultoria Ambiental</h2>
+          <p>
+            Nossa consultoria ajuda empresas e comunidades a adotarem práticas
+            mais sustentáveis no dia a dia. Trabalhamos lado a lado com nossos
+            clientes para encontrar soluções que preservem o meio ambiente e
+            tragam benefícios para a sociedade.
+          </p>
+          <a href="#" class="btn-consultoria">Fale com um especialista</a>
+        </div>
       </div>
-      <div class="navegacao">
-        <h3>Navegação</h3>
-        <ul>
-          <li>Home</li>
-          <li>Consultoria</li>
-          <li>Jardinagem</li>
-          <li>Catálogo</li>
-        </ul>
+    </section>
+
+    <!-- GAME / QUIZ -->
+    <section class="game">
+      <div class="game-container">
+        <h2 class="game-title">🎮 Desafio da Mata Atlântica</h2>
+
+        <p class="game-sub">
+          Você conhece mesmo a Mata Atlântica? descubra curiosidades sobre cuidar da sua planta
+        </p>
+
+        <div class="game-card" data-aos="zoom-in">
+          <div class="game-icon">🌿</div>
+
+          <h3>Jardim Urbano</h3>
+
+          <p>
+           Jogue agora e descubra como cuidar da sua planta em cada ambiente
+          </p>
+
+          <a href="https://iasminmoreira.github.io/uc1Cuna/" class="btn-play">▶ Jogar Agora</a>
+        </div>
       </div>
-      <p>© 2024 Catálogo. Todos os direitos reservados.</p>
+    </section>
+
+    <!-- GUIA DE JARDINAGEM -->
+    <section class="guia">
+      <div class="guia-container">
+        <div class="guia-texto">
+          <h2>Guia de Jardinagem Sustentável</h2>
+
+          <p>
+            Aprenda como plantar espécies nativas, cuidar do solo e transformar
+            seu espaço em um ambiente mais verde e equilibrado.
+          </p>
+
+          <ul class="guia-topicos">
+            <li>🌳 Como escolher plantas nativas</li>
+            <li>💧 Rega correta e economia de água</li>
+            <li>🌱 Cuidados com o solo</li>
+          </ul>
+
+          <a href="guia.html" class="btn-guia">Acessar Guia</a>
+        </div>
+
+        <div class="guia-img">
+          <img src="images/guia.jpg" alt="Guia de Jardinagem" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- CONTATO -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+
+          <p>📍 Rua João pessoa, 450</p>
+          <p>✉ urbia@gmail.com</p>
+          <p>📞 (11) 4002_8922</p>
+        </div>
+
+        <!-- NAVEGAÇÃO -->
+        <div class="footer-col">
+          <h3>Navegação</h3>
+
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cultoia2.html">Consultoria</a></li>
+            <li><a href="guia.html">Jardinagem</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+          </ul>
+        </div>
+
+        <!-- NEWSLETTER -->
+        <div class="footer-col newsletter">
+          <h3>Newsletter</h3>
+
+          <input type="email" placeholder="Your Email" />
+
+          <button>Subscribe Now</button>
+        </div>
+      </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="JavaScript/home.js"></script>
   </body>
 </html>

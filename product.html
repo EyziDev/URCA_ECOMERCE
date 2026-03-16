@@ -21,7 +21,16 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <header><a href="/index.html"><button id="voltar"><img src="images/folha.png"/><h1>Voltar</h1></button></a></header>
+    <script>
+    (function(d){
+        var s = d.createElement("script");
+        s.setAttribute("data-account", "SEU_ID_AQUI");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);
+    })(document);
+    </script>
+
+    <header><a href="/catalogo.html"><button id="voltar"><img src="images/folha.png"/><h1>Voltar</h1></button></a></header>
     <main>
         <div id="imageProduct">
             <img src=""/>

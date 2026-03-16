@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuna — Consultoria em Plantas & Arquitetura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <style>
+
+    :root {
+      --creme:        #F5F0E8;
+      --marfim:       #f5f2eb;
+      --verde-escuro: #135f3c;
+      --verde-salvia: #7A9E7E;
+      --terracota:    135f3c;
+      --linho:        #f3eee2;
+      --carvao:       #2A2A26;
+      --branco:       #fdfbf9;
+      --fonte-titulo: 'Poppins', bold;
+      --fonte-texto:  'Poppins', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background-color: var(--creme); color: var(--carvao); font-family: var(--fonte-texto); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+
+    .etiqueta { display: inline-block; font-family: var(--fonte-texto); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--verde-salvia); margin-bottom: 1rem; }
+    .botao { display: inline-block; padding: 0.85rem 2.2rem; font-family: var(--fonte-texto); font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid currentColor; cursor: pointer; transition: background 0.3s, color 0.3s; }
+    .botao-escuro { background: var(--verde-escuro); color: var(--branco); border-color: var(--verde-escuro); }
+    .botao-escuro:hover { background: var(--carvao); border-color: var(--carvao); }
+    .botao-contorno { background: transparent; color: var(--verde-escuro); border-color: var(--verde-escuro); }
+    .botao-contorno:hover { background: var(--verde-escuro); color: var(--branco); }
+    .botao-terracota { background: var(--terracota); color: var(--branco); border-color: var(--terracota); }
+    .botao-terracota:hover { background: #9A6245; border-color: #9A6245; }
+
+    .revelar { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .revelar.visivel { opacity: 1; transform: translateY(0); }
+
+    /* NAV */
+    nav { position: relative; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 5%; background: #135f3c; backdrop-filter: blur(8px); border-bottom: 1px solid var(--linho); transition: rwa0.3s; }
+    nav.rolando { box-shadow: 0 2px 20px rgba(255, 255, 255, 0.08); }
+    .nav-logo { font-family: var(--fonte-titulo); font-size: 1.7rem; font-weight: 300; letter-spacing: 0.12em; color: #265b43; }
+    .nav-links { display: flex; gap: 2.5rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #F5F0E8 ; }
+    .nav-links a { position: relative; padding-bottom: 2px;}
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--verde-escuro); transition: width 0.3s; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-acoes { display: flex; align-items: center; gap: 1.2rem; }
+    .nav-hamburguer { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-hamburguer span { display: block; width: 22px; height: 2px; background: var(--verde-escuro); transition: all 0.3s; }
+    .nav-hamburguer.aberto span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburguer.aberto span:nth-child(2) { opacity: 0; }
+    .nav-hamburguer.aberto span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-menu-mobile { display: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--creme); border-bottom: 1px solid var(--linho); padding: 1.5rem 5%; flex-direction: column; gap: 1.2rem; z-index: 99; box-shadow: 0 8px 20px #F5F0E8; }
+    .nav-menu-mobile.aberto { display: flex; }
+    .nav-menu-mobile a { font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--carvao); padding: 0.4rem 0; border-bottom: 1px solid var(--linho); }
+    .nav-menu-mobile a:last-child { border-bottom: none; }
+    .IMG29 { height: 50px; width: auto; display: block; object-fit: contain
+}
+
+    /* HERO */
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: flex-end; padding-top: 80px; overflow: hidden; }
+    .hero-imagem { position: absolute; inset: 0; background-image: url('images/image 195.png'); background-size: cover; background-position: center; z-index: 0; }
+    .hero-imagem::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,30,20,0.75) 0%, rgba(20,30,20,0.35) 50%, rgba(20,30,20,0.10) 100%); }
+    .hero-conteudo { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 5rem 7% 5rem; width: 100%; max-width: 780px; }
+    .hero-subtitulo-topo { font-family: var(--fonte-texto); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 1.2rem; }
+    .hero-titulo { font-family: var(--fonte-titulo); font-size: clamp(3.5rem, 7vw, 7rem); font-weight: 300; line-height: 1.05; color: var(--branco); margin-bottom: 1.5rem; }
+    .hero-titulo em { font-style: italic; color: #5aa852; }
+    .hero-descricao { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.75); max-width: 460px; margin-bottom: 2.5rem; line-height: 1.8; }
+    .hero-botoes { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .hero-credito-foto { position: absolute; bottom: 2rem; right: 2rem; z-index: 2; font-family: var(--fonte-titulo); font-size: 0.82rem; font-style: italic; color: rgba(255,255,255,0.6); }
+    
+
+    /* FAIXA */
+    .faixa { background: var(--verde-escuro); color: var(--branco); display: flex; align-items: center; justify-content: center; gap: 3rem; padding: 1.2rem 5%; overflow: hidden; }
+    .faixa-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; white-space: nowrap; }
+    .faixa-ponto { width: 4px; height: 4px; border-radius: 50%; background: var(--terracota); }
+
+    /* SOBRE */
+    .sobre { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; }
+    .sobre-imagem { position: relative; overflow: hidden; background-color: var(--linho); background-image: url('images/download (25).jpg'); background-size: cover; background-position: center; min-height: 500px; }
+
+    .sobre-conteudo { background: var(--marfim); padding: 6rem 7% 6rem 5%; display: flex; flex-direction: column; justify-content: center; }
+    .sobre-conteudo h2 { font-family: var(--fonte-titulo); font-size: clamp(2.2rem, 3.5vw, 3.8rem); font-weight: 300; line-height: 1.15; color: var(--verde-escuro); margin-bottom: 1.8rem; }
+    .sobre-conteudo h2 span { display: block; font-style: italic; color: var(--terracota); }
+    .sobre-conteudo p { font-size: 0.95rem; font-weight: 300; color: #5A5A52; line-height: 1.85; margin-bottom: 1.2rem; max-width: 480px; }
+    .sobre-numeros { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2.5rem; padding-top: 2.5rem; border-top: 1px solid var(--linho); }
+    .sobre-numero h3 { font-family: var(--fonte-titulo); font-size: 2.8rem; font-weight: 300; color: var(--verde-escuro); line-height: 1; }
+    .sobre-numero p { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--terracota); margin-bottom: 0; }
+
+    /* SERVIÇOS */
+    .servicos { padding: 7rem 7%; background: var(--creme); }
+    .servicos-cabecalho { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; margin-bottom: 4rem; }
+    .servicos-cabecalho h2 { font-family: var(--fonte-titulo); font-size: clamp(2rem,3.2vw,3.5rem); font-weight: 300; line-height: 1.15; color: var(--verde-escuro); }
+    .servicos-cabecalho p { font-size: 0.95rem; font-weight: 300; color: #5A5A52; line-height: 1.8; }
+    .servicos-grade { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: var(--linho); }
+    .servico-card { background: var(--creme); padding: 3rem 2.5rem; display: flex; flex-direction: column; transition: background 0.35s; cursor: default; }
+    .servico-card:hover { background: var(--verde-escuro); color: var(--branco); }
+    .servico-card:hover .servico-etiqueta, .servico-card:hover .servico-descricao { color: rgba(255,255,255,0.7); }
+    .servico-card:hover .servico-titulo { color: var(--branco); }
+    .servico-card:hover .servico-numero { color: rgba(255,255,255,0.15); }
+    .servico-icone { width: 48px; height: 48px; margin-bottom: 2rem; background-color: var(--linho); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .servico-icone svg { width: 22px; height: 22px; }
+    .servico-etiqueta { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracota); margin-bottom: 0.8rem; transition: color 0.35s; }
+    .servico-titulo { font-family: var(--fonte-titulo); font-size: 1.6rem; font-weight: 400; line-height: 1.25; color: var(--verde-escuro); margin-bottom: 1rem; transition: color 0.35s; }
+    .servico-descricao { font-size: 0.88rem; font-weight: 300; color: #5A5A52; line-height: 1.8; flex: 1; transition: color 0.35s; }
+    .servico-numero { margin-top: 2.5rem; font-family: var(--fonte-titulo); font-size: 3rem; font-weight: 300; color: var(--linho); line-height: 1; align-self: flex-end; transition: color 0.35s; }
+
+    /* GALERIA */
+    .galeria { padding: 7rem 7%; background: var(--marfim); }
+    .galeria-cabecalho { text-align: center; margin-bottom: 4rem; }
+    .galeria-cabecalho h2 { font-family: var(--fonte-titulo); font-size: clamp(2rem,3.2vw,3.5rem); font-weight: 300; color: var(--verde-escuro); margin-bottom: 1rem; }
+    .galeria-cabecalho p { font-size: 0.95rem; font-weight: 300; color: #5A5A52; max-width: 480px; margin: 0 auto; }
+    .galeria-grade { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 420px 340px; gap: 10px; }
+    .galeria-item { overflow: hidden; position: relative; background-color: var(--linho); cursor: pointer; }
+    .galeria-item::after { content: ''; position: absolute; inset: 0; background: rgba(61,82,64,0); transition: background 0.4s; }
+    .galeria-item:hover::after { background: rgba(61,82,64,0.35); }
+    .galeria-legenda { position: absolute; bottom: 1.2rem; left: 1.2rem; z-index: 2; color: var(--branco); font-family: var(--fonte-titulo); font-size: 1rem; font-style: italic; opacity: 0; transform: translateY(8px); transition: opacity 0.4s, transform 0.4s; }
+    .galeria-item:hover .galeria-legenda { opacity: 1; transform: translateY(0); }
+    .galeria-item:nth-child(1) { grid-row: 1/3; background-image: url('images/download (8).webp'); background-size: cover; background-position: center; }
+    .galeria-item:nth-child(2) { background-image: url('images/download (70.jpg'); background-size: cover; background-position: center; }
+    .galeria-item:nth-child(3) { background-image: url('images/Gallery of Powerhouse Company Wins Competition for a Diverse Urban Ensemble in Amsterdam, Netherlands  - 2.webp'); background-size: cover; background-position: center; }
+    .galeria-item:nth-child(4) { grid-column: 2/4; background-image: url('images/Improving with age_ How city design is adapting to older populations.jpg'); background-size: cover; background-position: center; }
+    .galeria-item:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80'); background-size: cover; background-position: center; }
+
+    /* PROCESSO */
+    .processo { padding: 7rem 7%; background: var(--creme); }
+    .processo-interno { display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start; }
+    .processo-esquerda h2 { font-family: var(--fonte-titulo); font-size: clamp(2rem,3vw,3.2rem); font-weight: 300; line-height: 1.15; color: var(--verde-escuro); position: sticky; top: 120px; }
+    .processo-esquerda h2 em { font-style: italic; color: var(--terracota); display: block; }
+    .processo-etapas { display: flex; flex-direction: column; }
+    .etapa { display: grid; grid-template-columns: 60px 1fr; gap: 2rem; padding: 2.5rem 0; border-bottom: 1px solid var(--linho); }
+    .etapa:last-child { border-bottom: none; }
+    .etapa-numero { font-family: var(--fonte-titulo); font-size: 1rem; font-style: italic; color: var(--linho); padding-top: 4px; }
+    .etapa-corpo h3 { font-family: var(--fonte-titulo); font-size: 1.45rem; font-weight: 400; color: var(--verde-escuro); margin-bottom: 0.7rem; }
+    .etapa-corpo p { font-size: 0.9rem; font-weight: 300; color: #5A5A52; line-height: 1.8; }
+
+    /* DEPOIMENTOS */
+    .depoimentos { padding: 7rem 7%; background: var(--verde-escuro); color: var(--branco); }
+    .depoimentos-cabecalho { text-align: center; margin-bottom: 4rem; }
+    .depoimentos-cabecalho h2 { font-family: var(--fonte-titulo); font-size: clamp(2rem,3.2vw,3.5rem); font-weight: 300; color: var(--branco); }
+    .depoimentos-grade { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5px; background: rgba(255,255,255,0.1); }
+    .depoimento-card { background: var(--verde-escuro); padding: 2.5rem; display: flex; flex-direction: column;}
+    .depoimento-texto { font-family: var(--fonte-titulo); font-size: 1.2rem; font-style: italic; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 1.8rem; }
+    .depoimento-autor { display: flex; align-items: center; gap: 1rem; margin-top: auto; }
+    .depoimento-info strong { display: block; font-size: 0.85rem; font-weight: 500; color: var(--branco); }
+    .depoimento-info span { font-size: 0.75rem; color: var(--verde-salvia); letter-spacing: 0.08em; }
+
+    /* CONTATO */
+    .contato-secao { padding: 9rem 7%; background: var(--marfim); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .contato-imagem { aspect-ratio: 3/4; overflow: hidden; background-color: var(--linho); background-image: url('images/archi model.webp'); background-size: cover; background-position: center; }
+    .contato-conteudo h2 { font-family: var(--fonte-titulo); font-size: clamp(2.2rem,3.5vw,4rem); font-weight: 300; line-height: 1.12; color: var(--verde-escuro); margin-bottom: 1.5rem; }
+    .contato-conteudo h2 em { font-style: italic; color: var(--terracota); }
+    .contato-conteudo p { font-size: 0.95rem; font-weight: 300; color: #5A5A52; line-height: 1.85; margin-bottom: 2.5rem; max-width: 420px; }
+    .formulario { display: flex; flex-direction: column; gap: 1rem; max-width: 420px; }
+    .formulario input, .formulario select, .formulario textarea { width: 100%; padding: 0.9rem 1rem; background: transparent; border: 1px solid var(--linho); color: var(--carvao); font-family: var(--fonte-texto); font-size: 0.9rem; font-weight: 300; outline: none; transition: border-color 0.3s; }
+    .formulario input:focus, .formulario select:focus, .formulario textarea:focus { border-color: var(--verde-escuro); }
+    .formulario textarea { resize: vertical; min-height: 100px; }
+
+    /* RODAPÉ */
+    footer { background: var(--carvao); color: rgba(255,255,255,0.6); padding: 5rem 7% 2rem; }
+    .rodape-topo { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; padding-bottom: 4rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem; }
+    .rodape-marca .nav-logo { color: var(--branco); }
+    .rodape-marca p { font-size: 0.88rem; font-weight: 300; line-height: 1.8; margin-top: 1rem; max-width: 260px; }
+    .rodape-coluna h4 { font-family: var(--fonte-texto); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--branco); margin-bottom: 1.4rem; }
+    .rodape-coluna ul { display: flex; flex-direction: column; gap: 0.65rem; }
+    .rodape-coluna ul li a { font-size: 0.88rem; transition: color 0.3s; }
+    .rodape-coluna ul li a:hover { color: var(--branco); }
+    .rodape-base { display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; }
+    .IMG29 { height: 50px; width: auto; display: block; object-fit: contain}
+
+    /* RESPONSIVO */
+    @media (max-width: 1100px) {
+    .servicos-grade { 
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    .rodape-topo { 
+        grid-template-columns: 1fr 1fr; 
+        gap: 2.5rem; 
+      }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-hamburguer { display: flex; }
+      .hero { min-height: 80vh; }
+      .hero-conteudo { padding: 5rem 6% 4rem; }
+      .hero-badge { top: 5rem; right: 5%; }
+      .faixa { flex-wrap: wrap; gap: 0.7rem 1.5rem; justify-content: center; }
+      .sobre { grid-template-columns: 1fr; }
+      .sobre-imagem { min-height: 60vw; order: -1; }
+      .sobre-imagem-detalhe { display: none; }
+      .sobre-conteudo { padding: 4rem 6%; }
+      .servicos-cabecalho { grid-template-columns: 1fr; }
+      .servicos-grade { grid-template-columns: repeat(2,1fr); }
+      .galeria-grade { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, clamp(160px,28vw,260px)); }
+      .galeria-item:nth-child(1) { grid-row: auto; }
+      .galeria-item:nth-child(4) { grid-column: auto; }
+      .processo-interno { grid-template-columns: 1fr; gap: 2.5rem; }
+      .processo-esquerda h2 { position: static; }
+      .depoimentos-grade { grid-template-columns: 1fr; }
+      .contato-secao { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 6%; }
+      .contato-imagem { aspect-ratio: 16/9; width: 100%; }
+      .rodape-topo { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .faixa-item:nth-child(n+4) { display: none; }
+      .sobre-numeros { grid-template-columns: 1fr 1fr; }
+      .servicos-grade { grid-template-columns: 1fr; }
+      .galeria-grade { grid-template-columns: 1fr; grid-template-rows: repeat(5, clamp(180px,55vw,280px)); }
+      .galeria-item:nth-child(1), .galeria-item:nth-child(4) { grid-row: auto; grid-column: auto; }
+      .rodape-topo { grid-template-columns: 1fr; }
+      .rodape-base { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 400px) {
+      body { font-size: 15px; }
+      .hero-conteudo { padding: 6rem 4% 3rem; }
+      .hero-botoes { flex-direction: column; width: 100%; }
+      .hero-botoes .botao { width: 100%; text-align: center; }
+      .faixa { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script>
+  (function(d){
+    var s = d.createElement("script");
+    s.setAttribute("data-account", "SEU_ID_AQUI");
+    s.setAttribute("src", "https://cdn.userway.org/widget.js");
+    (d.body || d.head).appendChild(s);
+  })(document);
+  </script>
+
+  <nav id="navegacao">
+    <img class="IMG29" src="images/logoGuia.png" alt="">
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#processo">Processo</a></li>
+    </ul>
+
+    <div class="nav-acoes">
+      <a href="#contato" class="botao botao-escuro">Agendar consulta</a>
+      <button class="nav-hamburguer" id="botaoMenu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-menu-mobile" id="menuMobile">
+    <a href="#sobre"    onclick="fecharMenuMobile()">Sobre</a>
+    <a href="#servicos" onclick="fecharMenuMobile()">Serviços</a>
+    <a href="#projetos" onclick="fecharMenuMobile()">Projetos</a>
+    <a href="#processo" onclick="fecharMenuMobile()">Processo</a>
+    <a href="#contato"  onclick="fecharMenuMobile()">Contato</a>
+    <a href="#Home"     onclick="fecharMenuMobile()">Home</a>
+    
+  </div>
+
+  <section class="hero">
+    <div class="hero-imagem"></div>
+    <div class="hero-conteudo revelar">
+      <p class="hero-subtitulo-topo">Consultoria em plantas &amp; arquitetura</p>
+      <h1 class="hero-titulo">Espaços que<br /><em>respiram</em><br />vida</h1>
+      <p class="hero-descricao">Integramos paisagismo, biofilia e arquitetura para criar ambientes únicos — de lares íntimos a grandes projetos corporativos.</p>
+      <div class="hero-botoes">
+        <a href="#contato" class="botao botao-escuro">Quero uma consultoria</a>
+        <a href="#projetos" class="botao botao-contorno" style="color:var(--branco);border-color:rgba(255,255,255,0.6);">Ver projetos</a>
+      </div>
+    </div>
+    <p class="hero-credito-foto">Projeto Residencial · São Paulo</p>
+  </section>
+
+  <div class="faixa">
+    <div class="faixa-item"><span class="faixa-ponto"></span> Consultoria Residencial</div>
+    <div class="faixa-item"><span class="faixa-ponto"></span> Projetos Corporativos</div>
+    <div class="faixa-item"><span class="faixa-ponto"></span> Paisagismo Interior</div>
+    <div class="faixa-item"><span class="faixa-ponto"></span> Arquitetura Biofílica</div>
+    <div class="faixa-item"><span class="faixa-ponto"></span> Curadoria de Espécies</div>
+  </div>
+
+  <section class="sobre" id="sobre">
+    <div class="sobre-imagem"><div class="sobre-imagem-detalhe"></div></div>
+    <div class="sobre-conteudo revelar">
+      <span class="etiqueta">Nossa história</span>
+      <h2>Onde a natureza <span>encontra a forma</span></h2>
+      <p>A Cuna nasceu da crença de que plantas e arquitetura são linguagens que se completam. Combinamos botânica, design de interiores e urbanismo para criar experiências sensoriais que transformam espaços em refúgios vivos.</p>
+      <p>Nossa equipe multidisciplinar acompanha cada projeto do primeiro esboço à última muda plantada — garantindo coerência estética, funcional e afetiva em cada centímetro do seu ambiente.</p>
+      <a href="#contato" class="botao botao-contorno" style="margin-top:1rem;">Conheça nosso trabalho</a>
+      <div class="sobre-numeros">
+        <div class="sobre-numero"><h3>180+</h3><p>Projetos entregues</p></div>
+        <div class="sobre-numero"><h3>9</h3><p>Anos de experiência</p></div>
+        <div class="sobre-numero"><h3>98%</h3><p>Satisfação dos clientes</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicos" id="servicos">
+    <div class="servicos-cabecalho revelar">
+      <h2>O que a<br />Cuna oferece</h2>
+      <p>Cada serviço foi desenhado para integrar o verde ao espaço construído de forma intencional — respeitando luz, escala e o ritmo de vida de quem habita.</p>
+    </div>
+    <div class="servicos-grade">
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <p class="servico-etiqueta">01 — Residencial</p>
+        <h3 class="servico-titulo">Consultoria<br />de Interiores Verdes</h3>
+        <p class="servico-descricao">Seleção, posicionamento e cuidado de plantas para residências. Criamos harmonia entre a vegetação e a identidade do lar.</p>
+        <span class="servico-numero">01</span>
+      </div>
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div>
+        <p class="servico-etiqueta">02 — Corporativo</p>
+        <h3 class="servico-titulo">Projetos<br />Corporativos</h3>
+        <p class="servico-descricao">Ambientes de trabalho mais saudáveis e produtivos com a integração estratégica de plantas e jardins internos.</p>
+        <span class="servico-numero">02</span>
+      </div>
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><path d="M12 22V12M12 12C12 7 7 4 2 6c0 6 4 10 10 10M12 12c0-5 5-8 10-6-1 6-5 10-10 10"/></svg></div>
+        <p class="servico-etiqueta">03 — Paisagismo</p>
+        <h3 class="servico-titulo">Paisagismo<br />Arquitetônico</h3>
+        <p class="servico-descricao">Jardins externos e fachadas verdes que dialogam com a linguagem arquitetônica da edificação e o entorno urbano.</p>
+        <span class="servico-numero">03</span>
+      </div>
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
+        <p class="servico-etiqueta">04 — Biofilia</p>
+        <h3 class="servico-titulo">Design<br />Biofílico</h3>
+        <p class="servico-descricao">Aplicamos os princípios da biofilia — luz, água, textura e vegetação — para reconectar as pessoas à natureza dentro dos espaços construídos.</p>
+        <span class="servico-numero">04</span>
+      </div>
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <p class="servico-etiqueta">05 — Curadoria</p>
+        <h3 class="servico-titulo">Curadoria<br />de Espécies</h3>
+        <p class="servico-descricao">Identificamos as plantas certas para cada microclima e intenção estética, garantindo beleza duradoura e baixa manutenção.</p>
+        <span class="servico-numero">05</span>
+      </div>
+      <div class="servico-card revelar">
+        <div class="servico-icone"><svg viewBox="0 0 24 24" fill="none" stroke="#3D5240" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <p class="servico-etiqueta">06 — Manutenção</p>
+        <h3 class="servico-titulo">Plano de<br />Manutenção</h3>
+        <p class="servico-descricao">Planos mensais personalizados com visitas técnicas, replantio e atualização sazonal do seu jardim ou espaço verde interno.</p>
+        <span class="servico-numero">06</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria" id="projetos">
+    <div class="galeria-cabecalho revelar">
+      <span class="etiqueta">Nossos projetos</span>
+      <h2>Cada espaço conta<br />uma história verde</h2>
+      <p>Uma seleção de ambientes que transformamos com curadoria botânica e sensibilidade arquitetônica.</p>
+    </div>
+    <div class="galeria-grade">
+      <div class="galeria-item"><span class="galeria-legenda">Parque das graças</span></div>
+      <div class="galeria-item"><span class="galeria-legenda">Escola - Alto sol</span></div>
+      <div class="galeria-item"><span class="galeria-legenda">CESC - Artes e educação</span></div>
+      <div class="galeria-item"><span class="galeria-legenda">Lar Santana - Casa de repouso</span></div>
+      <div class="galeria-item"><span class="galeria-legenda">Terraço · Higienópolis</span></div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+    </div>
+  </section>
+
+  <section class="processo" id="processo">
+    <div class="processo-interno">
+      <div class="processo-esquerda revelar">
+        <h2>Como funciona <em>a consultoria</em></h2>
+      </div>
+      <div class="processo-etapas">
+        <div class="etapa revelar"><span class="etapa-numero">01</span><div class="etapa-corpo"><h3>Diagnóstico do espaço</h3><p>Visitamos o ambiente para entender luz natural, circulação, umidade e intenção estética do projeto.</p></div></div>
+        <div class="etapa revelar"><span class="etapa-numero">02</span><div class="etapa-corpo"><h3>Proposta personalizada</h3><p>Elaboramos um projeto com seleção de espécies, disposição, vasos e integração com mobiliário e materiais arquitetônicos.</p></div></div>
+        <div class="etapa revelar"><span class="etapa-numero">03</span><div class="etapa-corpo"><h3>Execução &amp; implantação</h3><p>Nossa equipe realiza a implantação completa — do plantio à curadoria de detalhes como iluminação e irrigação.</p></div></div>
+        <div class="etapa revelar"><span class="etapa-numero">04</span><div class="etapa-corpo"><h3>Cuidado contínuo</h3><p>Oferecemos acompanhamento pós-implantação com visitas técnicas, ajustes sazonais e suporte remoto pelo nosso aplicativo.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="depoimentos">
+    <div class="depoimentos-cabecalho revelar">
+      <span class="etiqueta" style="color:var(--linho)">O que dizem</span>
+      <h2>Quem viveu<br />a transformação</h2>
+    </div>
+    <div class="depoimentos-grade">
+      <div class="depoimento-card revelar">
+        <p class="depoimento-texto">"A Cuna transformou nosso escritório num jardim. A produtividade melhorou, o ambiente ficou mais acolhedor — e as visitas adoram."</p>
+        <div class="depoimento-autor">
+          <img src="images/mulheerrrr ceo.webp" alt="Ana Lima" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div class="depoimento-info"><strong>Maria Luiza</strong><span>CEO · Studio AL</span></div>
+        </div>
+      </div>
+      <div class="depoimento-card revelar">
+        <p class="depoimento-texto">"Projeto impecável do início ao fim. Cada planta foi escolhida com cuidado para dialogar com a arquitetura da casa. Simplesmente incrível."</p>
+        <div class="depoimento-autor">
+          <img src="images/homem cliente.jpg" alt="Rodrigo Mendes" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div class="depoimento-info"><strong>Rodrigo Mendes</strong><span>Arquiteto · São Paulo</span></div>
+        </div>
+      </div>
+      <div class="depoimento-card revelar">
+        <p class="depoimento-texto">"Contratamos para o terraço e a equipe entendeu exatamente o que queríamos. O resultado superou todas as expectativas."</p>
+        <div class="depoimento-autor">
+          <img src="images/⋆.jpg" alt="Camila Torres" style="width:44px;height:44px;border-radius:50%;object-fit:cover;flex-shrink:0;">
+          <div class="depoimento-info"><strong>Camila Torres</strong><span>Engenheira · São Paulo</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contato-secao" id="contato">
+    <div class="contato-imagem revelar"></div>
+    <div class="contato-conteudo revelar">
+      <span class="etiqueta">Agende sua consultoria</span>
+      <h2>Vamos criar seu <em>espaço vivo</em> juntos?</h2>
+      <p>Preencha o formulário e entraremos em contato em até 24 horas para agendar uma conversa sem compromisso sobre o seu projeto.</p>
+      <div class="formulario" id="formularioContato">
+        <input type="text"  placeholder="Seu nome completo" />
+        <input type="email" placeholder="E-mail" />
+        <input type="tel"   placeholder="WhatsApp" />
+        <select><option value="" disabled selected>Tipo de projeto</option><option>Residencial</option><option>Corporativo</option><option>Paisagismo Externo</option><option>Design Biofílico</option><option>Manutenção</option></select>
+        <textarea placeholder="Conte um pouco sobre o seu espaço..."></textarea>
+        <button class="botao botao-terracota" onclick="alert('Mensagem enviada! Entraremos em contato em breve.')">Enviar mensagem</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="rodape-topo">
+      <div class="rodape-marca">
+        <img class="IMG29" src="images/logoGuia.png">
+        <p>Consultoria em plantas e arquitetura — criando espaços que respiram vida desde 2016.</p>
+      </div>
+      <div class="rodape-coluna"><h4>Serviços</h4><ul><li><a href="#">Residencial</a></li><li><a href="#">Corporativo</a></li><li><a href="#">Paisagismo</a></li><li><a href="#">Design Biofílico</a></li><li><a href="#">Manutenção</a></li></ul></div>
+      <div class="rodape-coluna"><h4>Empresa</h4><ul><li><a href="#">Sobre nós</a></li><li><a href="#">Projetos</a></li><li><a href="#">Blog</a></li><li><a href="#">Contato</a></li></ul></div>
+      <div class="rodape-coluna"><h4>Contato</h4><ul><li><a href="mailto:oi@cuna.com.br">oi@cuna.com.br</a></li><li><a href="tel:+5511999999999">(11) 99999-9999</a></li><li><a href="#">@cuna.studio</a></li><li><a href="#">São Paulo — SP</a></li></ul></div>
+    </div>
+    <div class="rodape-base">
+      <p>© 2026 Cuna. Todos os direitos reservados.</p>
+      <p>Feito com cuidado &amp; muitas plantas 🌿</p>
+    </div>
+  </footer>
+
+  <script>
+    const navegacao = document.getElementById('navegacao');
+    window.addEventListener('scroll', () => { navegacao.classList.toggle('rolando', window.scrollY > 40); });
+
+    const botaoMenu  = document.getElementById('botaoMenu');
+    const menuMobile = document.getElementById('menuMobile');
+    botaoMenu.addEventListener('click', () => { botaoMenu.classList.toggle('aberto'); menuMobile.classList.toggle('aberto'); });
+    function fecharMenuMobile() { botaoMenu.classList.remove('aberto'); menuMobile.classList.remove('aberto'); }
+
+    const elementosAnimados = document.querySelectorAll('.revelar');
+    const observador = new IntersectionObserver((entradas) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) { setTimeout(() => { entrada.target.classList.add('visivel'); }, 80); observador.unobserve(entrada.target); }
+      });
+    }, { threshold: 0.12 });
+    elementosAnimados.forEach(el => observador.observe(el));
+  </script>
+</body>
+</html>
